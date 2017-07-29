@@ -124,3 +124,30 @@ manager.updateDictionary = function (no, category, title, contents, callback) {
         callback(result);
     });
 };
+
+manager.search = function (searchWord,category, callback) {
+    let result = {
+        errer: false,
+        category: null,
+        dictionary: []
+    };
+
+    result.category = category;
+    
+    conn.query('select * from dictionary where category=? and title like "%?%" ', [category, searchWord], function (err, rows) {
+        if (err) result.errer = true;
+        else if (rows.length >= 0) {
+            for (let i = 0; i < rows.length; i++) {
+                let a = {
+                    title: null,
+                    contents: null
+                };
+
+                a.title = rows[i].title
+                a.contents = rows[i].contents;
+                result.dictionary.push(a);
+            }
+        }
+        callback(result);
+    });
+};

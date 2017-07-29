@@ -41,6 +41,13 @@ router.route('/dictionary/:no').delete(function (req, res) {
     });
 });
 
-router.r
+router.route('/search/:searchWord').get(function (req, res) {
+    let searchWord = req.params.searchWord;
+    let category = req.body.category;
+
+    manager.search(searchWord, category, function (result) {
+        res.render('index', result);
+    })
+});
 
 module.exports = router;
