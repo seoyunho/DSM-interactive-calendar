@@ -1,0 +1,130 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300');
+
+html,body{
+    height: 100%;
+    width: 100%;
+    padding: 0;
+    margin: 0 auto;
+    font-size: 0;
+  font-family: 'Montserrat', sans-serif;
+  background-color: #e8f8ff;
+}
+
+#category{
+    height: 100%;
+    width: 20%;
+    float: left;
+    background: #3480cd;
+    color: #fff;
+    padding: 0;
+    margin: 0;
+    font-size: 25px;
+}
+#category a:nth-child(1){
+    display: inline-block;
+    width: 100%;
+    margin-top: 100%;
+}
+
+#category li{
+    padding-left: 20%;
+    line-height: 3;
+    margin-top: 0;
+}
+
+#category li:hover{
+    background-color: #3498db;
+    cursor: pointer;
+}
+
+#category li:active{
+    background-color: #004563;
+    cursor: pointer;
+}
+
+#menu{
+    width: 80%;
+    height: 90%;
+    float: left;
+}
+
+.menu-items{
+    height: 50%;
+    width: 50%;
+    display: inline-block;
+    background-color: #e8f8ff;
+    cursor: pointer;
+    text-align: center;
+}
+
+.menu-items span{
+    color: #000;
+}
+
+.menu-items:hover, .menu-items:hover span{
+    background-color: #67b8de;
+    color: #fff;
+}
+
+.menu-items:active, .menu-items:active span{
+    background-color: #3498db;
+    color: #fff;
+}
+
+.menu-items h1{
+    margin: 0;
+    padding: 0;
+    font-size: 50px;
+    margin-top: 144px;
+}
+
+#header{
+    width: 80%;
+    height: 10%;
+    background-color: #004c66;
+    float: left;
+}
+
+#header input{
+    background-color: #fff;
+    height: 30px;
+    width: 25%;
+    padding: 0;
+    margin: 0;
+    float: right;
+    margin-top: 20px;
+    font-size: 18px;
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0);
+    border: 0.1px solid #fff;
+    padding-left: 20px;
+}
+
+#header button{
+    height: 35px;
+    width: 35px;
+    font-size: 16px;
+    padding: 0;
+    margin: 0;
+    background-color: rgba(0, 0, 0, 0);
+    border: 0.1px solid #fff;
+    color: #fff;
+    float: right;
+    margin: 20px 40px 0 5px;
+}
+
+#header span{
+    font-size: 36px;
+    color: #fff;
+    float: left;
+    display: inline-block;
+    margin-top: 15px;
+    margin-left: 35px;
+}
+
+a{
+    color: #fff;
+    text-decoration: none;
+    margin: 0;
+    padding: 0;
+}
