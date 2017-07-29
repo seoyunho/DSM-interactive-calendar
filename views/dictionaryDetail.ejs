@@ -31,7 +31,7 @@
         <div id="title">
             <h1> <%= result.dictionary[i].title %> </h1>
         <div id="button">
-            <% var url='/dictionary/'+result.dictionary[i].no %>
+            <% var url='/delete/dictionary/'+result.dictionary[i].no %>
             <a href="<%= url %>"><i class="fa fa-trash" aria-hidden="true"></i>Delete</a>
             <% var url='/dictionary-modify/'+result.dictionary[i].no %>
             <a href="<%= url %>"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>Modify</a>

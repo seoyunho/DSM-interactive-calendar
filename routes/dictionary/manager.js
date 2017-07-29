@@ -102,7 +102,7 @@ manager.deleteDictionary = function (no, callback) {
     conn.query('delete from dictionary where no=?', no, function (err, res) {
         if (err) result.errer = true;
         else if (res.affectedRows == 1) {
-            conn.query('select * from dictionary where category=?', category, function (err, rows) {
+            conn.query('select * from dictionary', null, function (err, rows) {
                 if (err) result.errer = true;
                 else if (rows.length >= 0) {
                     for (let i = 0; i < rows.length; i++) {

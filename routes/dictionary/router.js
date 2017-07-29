@@ -75,13 +75,13 @@ router.route('/dictionaryDetail/:no').get(function (req, res) {
     });
 });
 
-router.route('/dictionary/:no').delete(function (req, res) {
+router.route('/delete/dictionary/:no').get(function (req, res) {
     let no = req.params.no;
-
+    console.log(no);
     manager.deleteDictionary(no, function (result) {
         console.log(result);
         res.render('index', {
-            "result": result
+            "dictionary": result
         });
     });
 });
