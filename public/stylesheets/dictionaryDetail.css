@@ -1,0 +1,47 @@
+#detail {
+    width: 80%;
+    height: 90%;
+    float: left;
+}
+
+#title {
+    width: calc(100% - 40px);
+    margin-top: 20px;
+    padding-left: 40px;
+    /*margin-left: 45px;*/
+    display: inline-block;
+}
+
+#title h1 {
+    margin: 0;
+    padding: 0;
+    font-size: 50px;
+    display: inline;
+    float: left;
+}
+
+#detail hr {
+    margin: 15px 45px;
+}
+
+#contents {
+    margin-top: 20px;
+    margin-left: 45px;
+}
+
+#contents h3 {
+    margin: 0;
+    padding: 0;
+    font-size: 20px;
+}
+
+#button a{
+    float: right;
+    margin: 10px;
+    font-size : 20px;
+    color: #000;
+    border: 0.1px solid #000;
+    padding: 10px 20px;
+    border-radius: 10px;
+}
+
