@@ -50,7 +50,7 @@ router.route('/dictionary/:no').delete(function (req, res) {
     });
 });
 
-router.route('/search/:searchWord').get(function (req, res) {
+router.route('/search').get(function (req, res) {
     let searchWord = req.params.searchWord;
 
     manager.search(searchWord, category, function (result) {
