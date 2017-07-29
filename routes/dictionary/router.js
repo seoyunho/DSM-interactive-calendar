@@ -17,26 +17,26 @@ router.route('/dictionary/:category').post(function (req, res) {
     let title = req.body.title;
     let contents = req.body.contents;
 
-    manager.getDictionary(category, function (result) {
+    manager.addDictionary(category, title, contents, function (result) {
         res.render('index', result);
     });
 });
 
-router.route('/dictionary/:category').put(function (req, res) {
+router.route('/dictionary/:no').put(function (req, res) {
+    let no = req.params.no;
     let category = req.params.category;
     let title = req.body.title;
     let contents = req.body.contents;
 
-    manager.getDictionary(category, title, contents, function (result) {
+    manager.updatetDictionary(no, category, title, contents, function (result) {
         res.render('index', result);
     });
 });
 
-router.router('/dictionary/:').delete(function (req, res) {
-    let category = req.params.category;
-    let title = req.body.title;
+router.router('/dictionary/:no').delete(function (req, res) {
+    let no = req.params.no;
 
-    manager.getDictionary(category, title, function (result) {
+    manager.deleteDictionary(no, function (result) {
         res.render('index', result);
     });
 });
