@@ -125,24 +125,23 @@ manager.updateDictionary = function (no, category, title, contents, callback) {
     });
 };
 
-manager.search = function (searchWord,category, callback) {
+manager.search = function (searchWord, callback) {
     let result = {
         errer: false,
-        category: null,
         dictionary: []
     };
 
-    result.category = category;
-    
-    conn.query('select * from dictionary where category=? and title like "%?%" ', [category, searchWord], function (err, rows) {
+    conn.query('select * from dictionary where title like "%#?%" escape "#"', searchWord, function (err, rows) {
         if (err) result.errer = true;
         else if (rows.length >= 0) {
             for (let i = 0; i < rows.length; i++) {
                 let a = {
+                    category: null,
                     title: null,
                     contents: null
                 };
 
+                a.category = rows[i].category;
                 a.title = rows[i].title
                 a.contents = rows[i].contents;
                 result.dictionary.push(a);
