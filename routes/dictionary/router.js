@@ -4,6 +4,15 @@ let manager = require('./manager');
 let fs = require('fs');
 let path = require('path');
 
+router.route('/').get(function(req,res){
+    res.sendFile(path.resolve(__dirname,'../','../','./public/html/index.html'));
+})
+
+router.route('/dictionary').get(function(req,res){
+    res.sendFile(path.resolve(__dirname,'../','../','./public/html/dictionary.html'));
+})
+
+
 router.route('/dictionary/:category').get(function (req, res) {
     let category = req.params.category;
 
