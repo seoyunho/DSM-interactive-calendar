@@ -1,0 +1,47 @@
+#menu input{
+    width: 80%;
+    height: 40px;
+    font-size: 20px;
+    margin-left: 40px;
+    margin-top: 10px;
+}
+
+#menu textarea{
+    margin-top: 10px;
+    margin-left: 40px;
+    width: 80%;
+    height: 70%;
+    font-size: 22px;
+}
+
+#menu h1, #menu h3{
+    margin: 0;
+    margin-left: 40px;
+}
+
+#menu h1{
+    font-size: 40px;
+    margin-top: 20px;
+}
+
+#menu h3{
+    font-size: 28px;
+    margin-top: 20px;
+}
+
+#menu button{
+    margin-top: 20px;
+    font-size: 30px;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0);
+    border: 0.1px solid #000;
+    border-radius: 10px;
+    margin-left: 73.3%;
+    cursor: pointer;
+}
+
+#menu button:hover{
+    background-color: #3498db;
+    border-color: #3498db;
+    color: #fff;
+}
