@@ -33,12 +33,14 @@ router.route('/dictionary/:no').put(function (req, res) {
     });
 });
 
-router.router('/dictionary/:no').delete(function (req, res) {
+router.route('/dictionary/:no').delete(function (req, res) {
     let no = req.params.no;
 
     manager.deleteDictionary(no, function (result) {
         res.render('index', result);
     });
 });
+
+router.r
 
 module.exports = router;
