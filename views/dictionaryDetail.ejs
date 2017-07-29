@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="../stylesheets/dictionary.css" rel="stylesheet">
+    <link href="../stylesheets/dictionaryDetail.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+</head>
+
+<body>
+    <ul id="category">
+        <a href="/dictionary/web"><li><i class="fa fa-globe" aria-hidden="true"></i> Web</li></a>
+        <a href="/dictionary/application"><li><i class="fa fa-android" aria-hidden="true"></i> Application</li></a>
+        <a href="/dictionary/security"><li><i class="fa fa-shield" aria-hidden="true"></i> Security</li></a>
+        <a href="/dictionary/design"><li><i class="fa fa-paint-brush" aria-hidden="true"></i> Design</li></a>
+    </ul>
+
+    <header id="header">
+        <span>category</span>
+        <form action="/" method="GET">
+            <button><i class="fa fa-search" aria-hidden="true"></i></button>
+            <input type="text">
+        </form>
+    </header>
+    <section id="detail">
+         <% for(i in result.dictionary){ %>
+        <div id="title">
+            <h1> <%= result.dictionary[i].title %> </h1>
+        <div id="button">
+            <% var url='/dictionary/'+result.dictionary[i].no %>
+            <a href="<%= url %>"><i class="fa fa-trash" aria-hidden="true"></i>Delete</a>
+            <% var url='/dictionary-modify/'+result.dictionary[i].no %>
+            <a href="<%= url %>"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>Modify</a>
+        </div>
+        </div>
+        <hr>
+        <div id="contents">
+            <h3> <%= result.dictionary[i].contents %> </h3>
+        </div>
+        <% } %>
+    </section>
+
+</body>
+
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/stylesheets/dictionary.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/stylesheets/dictionary-write.css">
+    <title>DSM interactive calendar</title>
+</head>
+
+<body>
+    <ul id="category">
+        <a href="/dictionary/web">
+            <li><i class="fa fa-globe" aria-hidden="true"></i> Web</li>
+        </a>
+        <a href="/dictionary/application">
+            <li><i class="fa fa-android" aria-hidden="true"></i> Application</li>
+        </a>
+        <a href="/dictionary/security">
+            <li><i class="fa fa-shield" aria-hidden="true"></i> Security</li>
+        </a>
+        <a href="/dictionary/design">
+            <li><i class="fa fa-paint-brush" aria-hidden="true"></i> Design</li>
+        </a>
+    </ul>
+    <header id="header">
+        <span>Posting dictionary</span>
+        <form action="/search" method="GET">
+            <button><i class="fa fa-search" aria-hidden="true"></i></button>
+            <input type="text" name="search-world">
+        </form>
+    </header>
+    <section id="menu">
+        <% var action='/dictionary/'+result.dictionary[0].no %>
+        <form action="<%= action %>" method="POST">
+            <<h1>Category</h1>
+            <input type="text" placeholder="Please type dictionary title" name="category" value="<%= result.dictionary[0].category %> "> <br>
+            <h1>Title</h1>
+            <input type="text" placeholder="Please type dictionary title" name="title" value="<%= result.dictionary[0].title %> "> <br>
+            <h3>Description</h3>
+            <textarea id="" cols="30" rows="10" name="contents"><%=  result.dictionary[0].contents %></textarea><br>
+            <button type="submit">Subtmit</button>
+        </form>
+    </section>
+</body>
+
+</html>

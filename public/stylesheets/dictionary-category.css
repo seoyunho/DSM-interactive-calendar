@@ -53,3 +53,7 @@ html,body{
 #menu #list h1{
     float: none;
 }
+
+#menu #list a{
+    color: #000;
+}

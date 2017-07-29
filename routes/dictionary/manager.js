@@ -16,12 +16,41 @@ manager.getDictionary = function (category, callback) {
         else if (rows.length >= 0) {
             for (let i = 0; i < rows.length; i++) {
                 let a = {
+                    no: null,
                     title: null,
                     contents: null
                 };
 
+                a.no=rows[i].no;
                 a.title = rows[i].title
                 a.contents = rows[i].contents;
+                result.dictionary.push(a);
+            }
+        }
+        callback(result);
+    });
+};
+
+manager.getDictionaryByNo = function (no, callback) {
+    let result = {
+        errer: false,
+        dictionary: []
+    };
+
+    conn.query('select * from dictionary where no=?', no, function (err, rows) {
+        if (err) result.errer = true;
+        else if (rows.length >= 0) {
+            for (let i = 0; i < rows.length; i++) {
+                let a = {
+                    no: null,
+                    title: null,
+                    contents: null
+                };
+
+                a.no=rows[i].no;
+                a.title = rows[i].title
+                a.contents = rows[i].contents;
+                a.category=rows[i].category;
                 result.dictionary.push(a);
             }
         }
@@ -46,10 +75,12 @@ manager.addDictionary = function (category, title, contents, callback) {
                 else if (rows.length >= 0) {
                     for (let i = 0; i < rows.length; i++) {
                         let a = {
+                            no: null,
                             title: null,
                             contents: null
                         };
 
+                        a.no=rows[i].no;
                         a.title = rows[i].title
                         a.contents = rows[i].contents;
                         result.dictionary.push(a);
@@ -64,11 +95,9 @@ manager.addDictionary = function (category, title, contents, callback) {
 manager.deleteDictionary = function (no, callback) {
     let result = {
         errer: false,
-        category: null,
         dictionary: []
     };
 
-    result.category = category;
 
     conn.query('delete from dictionary where no=?', no, function (err, res) {
         if (err) result.errer = true;
@@ -78,10 +107,12 @@ manager.deleteDictionary = function (no, callback) {
                 else if (rows.length >= 0) {
                     for (let i = 0; i < rows.length; i++) {
                         let a = {
+                            no: null,
                             title: null,
                             contents: null
                         };
-
+                        
+                        a.no=rows[i].no;
                         a.title = rows[i].title
                         a.contents = rows[i].contents;
                         result.dictionary.push(a);
@@ -110,10 +141,12 @@ manager.updateDictionary = function (no, category, title, contents, callback) {
                 else if (rows.length >= 0) {
                     for (let i = 0; i < rows.length; i++) {
                         let a = {
+                            no: null,
                             title: null,
                             contents: null
                         };
-
+                        
+                        a.no=rows[i].no;
                         a.title = rows[i].title
                         a.contents = rows[i].contents;
                         result.dictionary.push(a);
@@ -136,11 +169,13 @@ manager.search = function (searchWord, callback) {
         else if (rows.length >= 0) {
             for (let i = 0; i < rows.length; i++) {
                 let a = {
+                    no:null,
                     category: null,
                     title: null,
                     contents: null
                 };
 
+                a.no=rows[i].no;
                 a.category = rows[i].category;
                 a.title = rows[i].title
                 a.contents = rows[i].contents;
@@ -150,3 +185,5 @@ manager.search = function (searchWord, callback) {
         callback(result);
     });
 };
+
+module.exports = manager;
