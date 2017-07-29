@@ -33,25 +33,26 @@ nav{
   cursor: pointer;
 }
 
-.menu:nth-child(2) .menu-icons{
+.menu:nth-child(1) .menu-icons{
   background-color: #3498db;
   box-shadow: 0px 10px #3480cd;
 }
 
-.menu:nth-child(1) .menu-icons{
+.menu:nth-child(2) .menu-icons{
   background-color: #f00;
   box-shadow: 0px 10px #cd2c24;
-  
-}
-
-.menu:nth-child(1) .menu-icons:active{
-  margin-top: 266px;
-  background-color: #cd2c24;
 }
 
 .menu:nth-child(2) .menu-icons:active{
   margin-top: 266px;
+  background-color: #cd2c24;
+  box-shadow: 0px 0px #000;
+}
+
+.menu:nth-child(1) .menu-icons:active{
+  margin-top: 266px;
   background-color: #3480cd;
+  box-shadow: 0px 0px #000;
 }
 
 .menu-icons span{

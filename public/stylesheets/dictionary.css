@@ -101,7 +101,7 @@ html,body{
 }
 
 #header button{
-    height: 35px;
+    height: 32px;
     width: 35px;
     font-size: 16px;
     padding: 0;
@@ -111,6 +111,7 @@ html,body{
     color: #fff;
     float: right;
     margin: 20px 40px 0 5px;
+    cursor: pointer;
 }
 
 #header span{
