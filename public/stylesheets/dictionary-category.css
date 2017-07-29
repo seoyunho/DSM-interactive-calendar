@@ -25,17 +25,25 @@ html,body{
     height: 10%;
 }
 
-#menu #menu-bar button{
+#menu #menu-bar a{
     float: right;
     margin-right: 40px;
-    height: 40px;
     margin-top: 10px;
     font-size: 24px;
     background-color: rgba( 0, 0, 0, 0);
     border-radius: 10px;
-    padding: auto 20px;;
+    padding: 10px 20px;;
     border: 0.1px solid #000;
+    color: #000;
+    cursor: pointer;
 }
+
+#menu #menu-bar a:hover{
+    background-color: #3498db;
+    border-color: #3498db;
+    color: #fff;
+}
+
 
 #menu #list{
     font-size: 16px;
