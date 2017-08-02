@@ -7,4 +7,6 @@ let conn = mysql.createConnection({
     database: "DSM_interactive_calendar"
 });
 
+conn.connect();
+
 module.exports = conn;  
